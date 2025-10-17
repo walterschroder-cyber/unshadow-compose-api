@@ -3,7 +3,7 @@ info:
   title: Unshadow Yourself Composer
   version: "1.0"
 servers:
-  - url: https://YOUR-PROJECT.vercel.app
+  - url: https://vercel.com/new/wallys-projects-7b31ad42/success?developer-id=&external-id=&redirect-url=&branch=main&deploymentUrl=unshadow-compose-api-2e6s-nizwyoa9w-wallys-projects-7b31ad42.vercel.app&projectName=unshadow-compose-api-2e6s&s=https%3A%2F%2Fgithub.com%2Fwalterschroder-cyber%2Funshadow-compose-api&gitOrgLimit=&hasTrialAvailable=1&totalProjects=1&flow-id=ZhaizvioNRNcyoprX0maZ
 paths:
   /api/compose:
     post:
