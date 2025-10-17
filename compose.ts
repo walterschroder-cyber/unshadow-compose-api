@@ -1,3 +1,5 @@
+ts
+
 export const runtime = 'edge';
 
 type Intake = {
