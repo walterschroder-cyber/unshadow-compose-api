@@ -1,0 +1,10 @@
+{
+  "name": "unshadow-yourself-compose-api",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "Edge function for Unshadow Yourself GPT Action: /api/compose returns SSML meditation",
+  "scripts": {
+    "start": "vercel dev"
+  }
+}

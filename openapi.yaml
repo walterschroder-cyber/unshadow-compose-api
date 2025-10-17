@@ -1,0 +1,45 @@
+openapi: 3.1.0
+info:
+  title: Unshadow Yourself Composer
+  version: "1.0"
+servers:
+  - url: https://YOUR-PROJECT.vercel.app
+paths:
+  /api/compose:
+    post:
+      operationId: compose
+      summary: Generate SSML meditation from hypnotherapy intake
+      description: |
+        Returns SSML for 1/3/5-minute meditation. Blocks if crisis content is detected.
+        Stateless; no PII stored.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [intake]
+              properties:
+                intake:
+                  type: object
+                  description: Hypnotherapy intake JSON (user/session/state/cognition/parts/needs/resources/closing)
+                audio:
+                  type: boolean
+                  default: false
+                  description: If true, the server MAY also render TTS and return an audioUrl (optional in v1).
+      responses:
+        "200":
+          description: SSML (and optional audio URL)
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [ssml, safety]
+                properties:
+                  ssml: { type: string, description: "SSML inside <speak>…</speak>" }
+                  audioUrl: { type: string, nullable: true }
+                  safety:
+                    type: object
+                    required: [crisis_flag]
+                    properties:
+                      crisis_flag: { type: boolean }
